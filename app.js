@@ -8,6 +8,19 @@ app.get('/', (req, res) => {
 	res.json({
     success: true,
     msg: "5app Coding Challenge",
+    payload: {
+      challenge: {
+        repo: "https://github.com/oschvr/5app-challenge",
+        docs: "https://documenter.getpostman.com/view/1720868/SVtPZrjJ"
+      },
+      author: {
+        name: "Oscar Chavez",
+        email: "oscarchavezromero@gmail.com",
+        cv: "https://drive.google.com/file/d/1KaEG6cj7N-fV6sPOcDc62sqdP17pUSfS/view?usp=sharing",
+        website: "https://oschvr.com",
+        github: "https://github.com/oschvr"
+      }
+    }
 	})
 })
 
