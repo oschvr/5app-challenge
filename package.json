@@ -1,0 +1,28 @@
+{
+  "name": "5app-challenge",
+  "version": "1.0.0",
+  "description": "A coding challege for 5app",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oschvr/5app-challenge.git"
+  },
+  "author": "Oscar Chavez <oschvr@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oschvr/5app-challenge/issues"
+  },
+  "homepage": "https://github.com/oschvr/5app-challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "figlet": "^1.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}
