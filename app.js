@@ -10,6 +10,7 @@ app.get('/', (req, res) => {
     msg: "5app Coding Challenge",
     payload: {
       challenge: {
+        host: "https://coding-challenge-5app.herokuapp.com/",
         repo: "https://github.com/oschvr/5app-challenge",
         docs: "https://documenter.getpostman.com/view/1720868/SVtPZrjJ"
       },
@@ -31,11 +32,17 @@ app.get('/', (req, res) => {
 app.post('/users', (req, res) => {
   const { payload } = req.body;
   res.json({
-    response: payload.map(user => Object.assign({}, {
-      name: user.name,
-      count: user.count,
-      thumbnail: user.logos[0].url
-    }))
+    response: 
+      payload
+        .map(user => Object.assign({}, {
+          name: user.name,
+          count: user.count,
+          thumbnail:
+            user.logos
+              .filter(logo => logo.size.match(/^([\d ]{2,3})/)[0] >= 64 && logo.size.match(/^([\d ]{2,5})/)[0] <= 128)
+              .map(logo => logo.url)[0]
+        })
+      ).filter(user => user.count >= 1)
   })
 })
 
